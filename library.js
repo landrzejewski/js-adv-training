@@ -1,10 +1,10 @@
 'use strict';
 
 const LIBRARY = (function (window, undefined) {
-    const version = '1.0';
-    const moduleSeparator = '.';
-    const rootNamespace = {};
-    const getVersion = () => `Version ${version}`;
+    const VERSION = '1.0';
+    const MODULE_SEPARATOR = '.';
+    const ROOT_NAMESPACE = {};
+    const getVersion = () => `Version ${VERSION}`;
     const addListener = (target, eventName, listener, context) => target.addEventListener(eventName, listener.bind(context || target));
     const forEachElement = (selector, task) => document.querySelectorAll(selector).forEach(task);
     const on = ({selector, eventName = 'click', listener, context}) => forEachElement(selector, (target) => addListener(target, eventName, listener, context));
@@ -16,16 +16,16 @@ const LIBRARY = (function (window, undefined) {
         return object;
     };
     const namespace = (name, module) => {
-        const namespaceParts = name.split(moduleSeparator);
+        const namespaceParts = name.split(MODULE_SEPARATOR);
         const namespaceContent = (index) => index === namespaceParts.length - 1 ? module : {};
         const prepareNamespace = (namespace, part, index) => addProperty(namespace, part, namespaceContent(index))[part];
-        return namespaceParts.reduce(prepareNamespace, rootNamespace);
+        return namespaceParts.reduce(prepareNamespace, ROOT_NAMESPACE);
     }
 
     console.log('Initializing LIBRARY');
 
     return {
-        version, // version: version
+        VERSION, // version: version
         getVersion,
         on,
         onReady,
