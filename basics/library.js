@@ -25,7 +25,7 @@ const LIBRARY = (function (window, undefined) {
     console.log('Initializing LIBRARY');
 
     return {
-        VERSION, // version: version
+        VERSION, // VERSION: VERSION
         getVersion,
         on,
         onReady,
