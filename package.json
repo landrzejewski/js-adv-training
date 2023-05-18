@@ -5,11 +5,11 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "npx babel-node test.js module-one.js"
+    "start": "npx babel-node src/main-module.js"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.8",
-    "@babel/node": "^7.21.4-esm",
-    "@babel/preset-env": "^7.21.5"
+    "@babel/core": "^7.19.3",
+    "@babel/node": "^7.19.1",
+    "@babel/preset-env": "^7.19.4"
   }
 }
