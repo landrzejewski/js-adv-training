@@ -1,0 +1,15 @@
+{
+  "name": "ecmascript-cheatsheet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "npx babel-node test.js module-one.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/node": "^7.21.4-esm",
+    "@babel/preset-env": "^7.21.5"
+  }
+}
