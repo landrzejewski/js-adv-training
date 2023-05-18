@@ -63,6 +63,7 @@ Założenia:
 -sposób naliczania podatku może się zmienić w przyszłości (zmiana zasad, nowe podatki)
 -występują ulgi/odpisy od podatku
 -każda operacja (naliczenie podatku/ulgi) powinna być logowana na konsoli
+-dane źródłowe wprowadzane są przez stronę (inputs), ostateczny wynik wyświetl na stronie
 
 Wykorzystaj podejście funkcyjne i poznane typy monad (Maybe/Either, IO)
 */
