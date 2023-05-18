@@ -3,49 +3,56 @@
 function getUser() {
     const user = {
         name: 'jan',
-        address: Monet.Some('Street x') // Monet.None()
+        address: Maybe.from('Street x')
     }
-    return Monet.Some(user); // Monet.None();
+    return Maybe.from(user);
 }
 
 const userName = getUser()
     .map((user) => user.name)
-    .map((name) => name.toUpperCase());
-
-// console.log(userName.getOrElse('Unknown'));
+    .map((name) => name.toUpperCase())
+    .fold(
+        () => console.log("Unknown"),
+        (name) => console.log(`Name: ${name}`)
+    );
 
 const userAddress = getUser()
-    .flatMap((user) => user.address);
-
-// console.log(userAddress.getOrElse('Unknown'));
+    .flatMap((user) => user.address)
+    .fold(
+        () => console.log("Unknown"),
+        (address) => console.log(`Address: ${address}`)
+    );
 
 // Either
 
 function divide(a, b) {
     if (b === 0) {
-        return Monet.Left('Division by zero');
+        return Either.Left('Division by zero');
     } else {
-        return Monet.Right(a / b);
+        return Either.Right(a / b);
     }
 }
 
 function square(value) {
-    return Monet.Right(value ** 2);
+    return Either(value ** 2);
 }
 
-/*
+
 divide(2, 1)
     .flatMap(square)
     .map((result) => `Result: ${result}`)
-    .forEach((element) => console.log(element));
-*/
+    .fold(
+        () => console.log("Unknown"),
+        result => console.log(`Result: ${result}`)
+    );
+
 
 // IO
 
 const celsiusToFahrenheit = (value) => value * 9 / 5 + 32;
 const formatTemperature = (value) => `Temperature: ${value} fahrenheit`;
-const readInputValue = (selector) => Monet.IO(() => document.querySelector(selector)).map((input) => input.value);
-const print = (text) => Monet.IO(() => console.log(text));
+const readInputValue = (selector) => IO(() => document.querySelector(selector)).map((input) => input.value);
+const print = (text) => IO(() => console.log(text));
 
 const pipeline = readInputValue('#temperature')
     .map(parseFloat)
@@ -53,8 +60,17 @@ const pipeline = readInputValue('#temperature')
     .map(formatTemperature)
     .flatMap(print);
 
-document.querySelector('#convertBtn')
-    .addEventListener('click', () => pipeline.run())
+ document.querySelector('#convertBtn')
+     .addEventListener('click', () => pipeline.run())
+
+const add = (firstValue, secondValue) => firstValue + secondValue;
+const concat = (io1, io2, combinator) => io1.flatMap((value) => io2.map((secondValue) => combinator(value, secondValue)));
+
+const test = concat(IO.of(2), IO.of(3), add)
+    .map((value) => value ** 2);
+console.log(test.run());
+
+
 
 /*
 Napisz kalkulator podatkowy :), który pozwoli na określenie całkowitej kwoty podatku do zapłacenia.
