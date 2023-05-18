@@ -147,7 +147,7 @@ Monads must satisfy three laws (axioms), collectively known as the monad laws:
 const Monad = (value) => ({
     flatMap: (fn) => fn(value),
     map (fn) {
-        return this.flatMap((x) => Monad.of(fn(a)));
+        return this.flatMap((x) => Monad.bind(fn(x)));
     },
     toString: () => value
 });
