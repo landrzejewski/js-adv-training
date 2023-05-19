@@ -158,3 +158,18 @@ Monad(21)
     .map(addTwo)
     .flatMap((x) => Monad.bind(x + 1))
     .map(square);
+
+
+//Freeze
+
+const user = {
+    age: 24,
+    address: {
+        street: 'Dobra 10'
+    }
+};
+
+Object.freeze(user);
+// user.age = 36; // exception
+
+// https://immutable-js.com

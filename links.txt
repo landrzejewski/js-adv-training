@@ -1,0 +1,20 @@
+- JS
+https://github.com/getify/You-Dont-Know-JS
+https://javascript.info
+http://latentflip.com/loupe
+https://dev.to/rfornal/use-cases-for-javascript-generators-1npc
+https://dev.to/alekseiberezkin/3-use-cases-for-es6-generators-3375
+https://jrsinclair.com/articles/2022/why-would-anyone-need-javascript-generator-functions
+
+- FP 
+https://leanpub.com/composingsoftware
+https://leanpub.com/functional-programming-in-js-with-categories
+https://leanpub.com/functional-programming-in-Ts-with-categories
+https://leanpub.com/asynchronous-javascript
+https://book.purescript.org/index.html
+https://leanpub.com/fp-made-easier
+https://abuseofnotation.github.io/category-theory-illustrated/00_about/
+
+- Monads
+https://www.youtube.com/watch?v=C2w45qRc3aU
+https://www.youtube.com/watch?v=OSuu8zBBNAA
