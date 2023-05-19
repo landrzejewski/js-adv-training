@@ -5,6 +5,7 @@ http://latentflip.com/loupe
 https://dev.to/rfornal/use-cases-for-javascript-generators-1npc
 https://dev.to/alekseiberezkin/3-use-cases-for-es6-generators-3375
 https://jrsinclair.com/articles/2022/why-would-anyone-need-javascript-generator-functions
+https://www.learnrxjs.io
 
 - FP 
 https://leanpub.com/composingsoftware
