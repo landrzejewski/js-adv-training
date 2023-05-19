@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "orders": [
+        {
+          "id": 10
+        }
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": 10,
+      "totalValue": 1000
+    }
+  ]
+}
