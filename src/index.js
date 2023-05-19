@@ -46,3 +46,9 @@ $.onReady(() => {
              error: (error) => console.log(error)
          });
 });
+
+/*
+- Stwórz formularz rejestracyjny użytkownika, który będzie walidował wprowadzone dane, a następnie wysyłał je na serwer
+- Dodanie nowego użytkownika powinno spowodować odświeżenie listy istniejących użytkowników w tabeli wyświetlanej na stronie
+- Wykorzystaj podejście reaktywne do odczytu wprowadzonych danych, ich walidacji oraz wysyłania/odbierania z serwera
+ */
